@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap');
-@import './styles/light-theme.css';
 
 @tailwind base;
 @tailwind components;
@@ -7,48 +6,31 @@
 
 @layer base {
   body {
-    @apply bg-[#0a0a0f] text-gray-200 font-mono antialiased transition-colors duration-300;
-  }
-
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-  ::-webkit-scrollbar-track {
-    @apply bg-[#0a0a0f];
-  }
-  ::-webkit-scrollbar-thumb {
-    @apply bg-[#2a2a3a] rounded-full;
+    background-color: #0a0a0f;
+    color: #e5e7eb;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.3s, color 0.3s;
   }
 }
 
-/* Light mode scrollbar */
-.light ::-webkit-scrollbar-track {
-  background-color: #f4f4f9;
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background-color: #0a0a0f;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #2a2a3a;
+  border-radius: 9999px;
 }
 
-.light ::-webkit-scrollbar-thumb {
-  background-color: #d1d5db;
-}
-
-/* Terminal cursor blink effect */
+/* Terminal cursor blink */
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
-
 .terminal-cursor {
   animation: blink 1s step-end infinite;
-}
-
-/* Fix for dark mode text colors */
-.dark .text-white {
-  color: #ffffff;
-}
-
-.dark .text-gray-300 {
-  color: #d1d5db;
-}
-
-.dark .text-gray-400 {
-  color: #9ca3af;
 }
