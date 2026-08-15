@@ -4,25 +4,23 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
-      colors: {
-        terminal: {
-          bg: '#0a0a0f',
-          card: '#14141e',
-          border: '#2a2a3a',
-          green: '#7bed9f',
-          blue: '#70a5ff',
-          purple: '#b388ff',
-          orange: '#ffab5e',
-          red: '#ff6b6b',
-          gray: '#8a8a9a',
-        }
-      },
       fontFamily: {
-        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+        mono: ['JetBrains Mono', 'monospace'],
+        sans: ['Inter', 'sans-serif'],
+      },
+      colors: {
+        violet: {
+          400: '#a78bfa',
+          500: '#7c3aed',
+        },
+        cyan: {
+          400: '#22d3ee',
+        },
       },
     },
   },
   plugins: [],
-}
+};

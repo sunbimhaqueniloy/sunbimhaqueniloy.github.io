@@ -1,25 +1,15 @@
 import { useEffect, useRef } from 'react';
 
-interface Particle {
-  x: number;
-  y: number;
-  size: number;
-  speedX: number;
-  speedY: number;
-  opacity: number;
-}
-
 export function ParticleBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    let particles: Particle[] = [];
+    let particles: { x: number; y: number; size: number; speedX: number; speedY: number; opacity: number }[] = [];
     let animationId: number;
 
     const resize = () => {
@@ -29,7 +19,7 @@ export function ParticleBackground() {
     resize();
     window.addEventListener('resize', resize);
 
-    const numParticles = Math.min(80, Math.floor(window.innerWidth / 20));
+    const numParticles = Math.min(60, Math.floor(window.innerWidth / 30));
     particles = Array.from({ length: numParticles }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
@@ -45,16 +35,14 @@ export function ParticleBackground() {
       particles.forEach((p, i) => {
         p.x += p.speedX;
         p.y += p.speedY;
-
         if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
         if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(112, 165, 255, ${p.opacity})`;
+        ctx.fillStyle = `rgba(124, 58, 237, ${p.opacity})`;
         ctx.fill();
 
-        // Draw connections
         for (let j = i + 1; j < particles.length; j++) {
           const dx = p.x - particles[j].x;
           const dy = p.y - particles[j].y;
@@ -64,7 +52,7 @@ export function ParticleBackground() {
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(112, 165, 255, ${0.08 * (1 - distance / 150)})`;
+            ctx.strokeStyle = `rgba(124, 58, 237, ${0.06 * (1 - distance / 150)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
@@ -75,18 +63,11 @@ export function ParticleBackground() {
     };
 
     draw();
-
     return () => {
       cancelAnimationFrame(animationId);
       window.removeEventListener('resize', resize);
     };
   }, []);
 
-  return (
-    <canvas
-      ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-0"
-      style={{ opacity: 0.6 }}
-    />
-  );
+  return <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none z-0 opacity-40" />;
 }

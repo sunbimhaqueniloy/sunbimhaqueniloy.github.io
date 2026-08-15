@@ -1,26 +1,21 @@
-/* Light Theme */
-.light body {
-  background-color: #f4f4f9;
-  color: #1f2937;
-}
-
-.light ::-webkit-scrollbar-track {
-  background-color: #f4f4f9;
-}
-.light ::-webkit-scrollbar-thumb {
-  background-color: #d1d5db;
-}
-
-.light .bg-terminal-bg { background-color: #f4f4f9 !important; }
-.light .bg-terminal-card { background-color: #ffffff !important; }
-.light .border-terminal-border { border-color: #d1d5db !important; }
-.light .text-terminal-gray { color: #6b7280 !important; }
-.light .text-white { color: #1f2937 !important; }
-.light .text-terminal-green { color: #059669 !important; }
-.light .text-terminal-blue { color: #2563eb !important; }
-.light .text-terminal-purple { color: #7c3aed !important; }
-.light .text-terminal-orange { color: #ea580c !important; }
+/* Light Theme - Designed, not inverted */
+.light .bg-\[\#0a0a0e\] { background-color: #f4f4f9 !important; }
+.light .bg-\[\#14141e\] { background-color: #ffffff !important; }
+.light .border-\[\#2a2a3a\] { border-color: #d1d5db !important; }
+.light .text-\[\#8a8a9a\] { color: #6b7280 !important; }
 .light .text-gray-300 { color: #374151 !important; }
-.light .text-gray-400 { color: #6b7280 !important; }
-.light .bg-terminal-border { background-color: #e5e7eb !important; }
-.light .bg-black\/50 { background-color: rgba(0,0,0,0.3) !important; }
+.light .text-white { color: #1f2937 !important; }
+.light .text-violet-400 { color: #7c3aed !important; }
+.light .text-cyan-400 { color: #0891b2 !important; }
+.light .hover\:text-violet-400:hover { color: #7c3aed !important; }
+.light .hover\:border-violet-500:hover { border-color: #7c3aed !important; }
+.light .bg-violet-500 { background-color: #7c3aed !important; }
+.light .bg-\[\#2a2a3a\] { background-color: #e5e7eb !important; }
+.light .hover\:bg-\[\#2a2a3a\]:hover { background-color: #e5e7eb !important; }
+.light .shadow-violet-500\/10 { box-shadow: 0 10px 15px -3px rgba(124, 58, 237, 0.15) !important; }
+.light .border-violet-500 { border-color: #7c3aed !important; }
+.light .shadow-2xl { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15) !important; }
+.light .bg-black\/70 { background-color: rgba(255, 255, 255, 0.85) !important; }
+.light .bg-violet-500\/20 { background-color: rgba(124, 58, 237, 0.10) !important; }
+.light .shadow-violet-500\/20 { box-shadow: 0 25px 50px -12px rgba(124, 58, 237, 0.15) !important; }
+.light .from-violet-500\/20 { background: radial-gradient(circle, rgba(124, 58, 237, 0.10), transparent 70%) !important; }

@@ -18,18 +18,13 @@ export function AlgorithmVisualizer() {
   }, [arraySize]);
 
   const generateArray = () => {
-    const newArray = Array.from(
-      { length: arraySize },
-      () => Math.floor(Math.random() * 80) + 10
-    );
+    const newArray = Array.from({ length: arraySize }, () => Math.floor(Math.random() * 80) + 10);
     setArray(newArray);
     setActiveIndices([]);
     setSortedIndices([]);
   };
 
-  const sleep = (ms: number) => {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  };
+  const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
   const bubbleSort = async () => {
     const arr = [...array];
@@ -64,9 +59,7 @@ export function AlgorithmVisualizer() {
       let minIdx = i;
       for (let j = i + 1; j < n && !abortRef.current; j++) {
         setActiveIndices([j, minIdx]);
-        if (arr[j] < arr[minIdx]) {
-          minIdx = j;
-        }
+        if (arr[j] < arr[minIdx]) minIdx = j;
         await sleep(speed / 2);
       }
       if (minIdx !== i) {
@@ -120,14 +113,14 @@ export function AlgorithmVisualizer() {
   };
 
   return (
-    <div className="bg-terminal-card rounded-xl border border-terminal-border p-6 w-full max-w-4xl mx-auto">
-      <h3 className="text-terminal-green font-mono text-lg mb-4">// algorithm visualizer</h3>
+    <div className="bg-[#14141e] rounded-xl border border-[#2a2a3a] p-6 w-full max-w-4xl mx-auto">
+      <h3 className="text-violet-400 font-mono text-lg mb-4">// algorithm visualizer</h3>
       
       <div className="flex flex-wrap gap-4 items-center mb-6 text-sm">
         <select
           value={algorithm}
           onChange={(e) => setAlgorithm(e.target.value as Algorithm)}
-          className="bg-terminal-bg border border-terminal-border rounded px-3 py-2 text-gray-300 font-mono"
+          className="bg-[#0a0a0e] border border-[#2a2a3a] rounded px-3 py-2 text-gray-300 font-mono"
           disabled={sorting}
         >
           <option value="bubble">Bubble Sort</option>
@@ -142,9 +135,9 @@ export function AlgorithmVisualizer() {
           value={arraySize}
           onChange={(e) => setArraySize(Number(e.target.value))}
           disabled={sorting}
-          className="w-32 accent-terminal-green"
+          className="w-32 accent-violet-500"
         />
-        <span className="text-terminal-gray text-xs">Size: {arraySize}</span>
+        <span className="text-[#8a8a9a] text-xs">Size: {arraySize}</span>
 
         <input
           type="range"
@@ -153,21 +146,21 @@ export function AlgorithmVisualizer() {
           value={speed}
           onChange={(e) => setSpeed(Number(e.target.value))}
           disabled={sorting}
-          className="w-32 accent-terminal-green"
+          className="w-32 accent-violet-500"
         />
-        <span className="text-terminal-gray text-xs">Speed: {speed}ms</span>
+        <span className="text-[#8a8a9a] text-xs">Speed: {speed}ms</span>
 
         {!sorting ? (
           <>
             <button
               onClick={startSort}
-              className="bg-terminal-green text-black px-4 py-2 rounded font-mono font-semibold hover:opacity-80 transition"
+              className="bg-violet-500 text-black px-4 py-2 rounded font-mono font-semibold hover:bg-violet-400 transition"
             >
               ▶ Sort
             </button>
             <button
               onClick={generateArray}
-              className="border border-terminal-border px-4 py-2 rounded font-mono text-gray-300 hover:bg-terminal-border transition"
+              className="border border-[#2a2a3a] px-4 py-2 rounded font-mono text-gray-300 hover:bg-[#2a2a3a] transition"
             >
               ↻ New
             </button>
@@ -175,14 +168,14 @@ export function AlgorithmVisualizer() {
         ) : (
           <button
             onClick={stopSort}
-            className="bg-terminal-red text-white px-4 py-2 rounded font-mono font-semibold hover:opacity-80 transition"
+            className="bg-red-500 text-white px-4 py-2 rounded font-mono font-semibold hover:bg-red-400 transition"
           >
             ■ Stop
           </button>
         )}
       </div>
 
-      <div className="flex items-end h-64 gap-1 bg-terminal-bg rounded-lg p-4 border border-terminal-border">
+      <div className="flex items-end h-64 gap-1 bg-[#0a0a0e] rounded-lg p-4 border border-[#2a2a3a]">
         {array.map((value, index) => (
           <div
             key={index}
@@ -190,17 +183,17 @@ export function AlgorithmVisualizer() {
             style={{
               height: `${(value / 90) * 100}%`,
               backgroundColor: sortedIndices.includes(index)
-                ? '#7bed9f'
+                ? '#a78bfa'
                 : activeIndices.includes(index)
-                ? '#ffab5e'
-                : '#70a5ff',
-              opacity: sortedIndices.includes(index) ? 0.8 : 1,
+                ? '#22d3ee'
+                : '#7c3aed',
+              opacity: sortedIndices.includes(index) ? 0.8 : 0.6,
             }}
           />
         ))}
       </div>
 
-      <div className="flex justify-between mt-3 text-xs text-terminal-gray">
+      <div className="flex justify-between mt-3 text-xs text-[#8a8a9a]">
         <span>Algorithm: {algorithm.charAt(0).toUpperCase() + algorithm.slice(1)} Sort</span>
         <span>{array.length} elements</span>
       </div>

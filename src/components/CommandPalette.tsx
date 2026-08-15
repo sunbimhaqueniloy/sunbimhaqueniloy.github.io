@@ -27,23 +27,13 @@ export function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
     { id: 'about', label: '📖 About' },
     { id: 'skills', label: '⚡ Skills' },
     { id: 'projects', label: '📁 Projects' },
+    { id: 'visualizer', label: '📊 Visualizer' },
     { id: 'timeline', label: '📅 Timeline' },
+    { id: 'blog', label: '📝 Blog' },
     { id: 'contact', label: '✉️ Contact' },
   ];
 
-  const projectItems = projects.map(p => ({
-    id: `project-${p.id}`,
-    label: `📂 ${p.title}`,
-    section: 'projects',
-  }));
-
-  const timelineItems = timeline.map((t, i) => ({
-    id: `timeline-${i}`,
-    label: `📌 ${t.semester}: ${t.title}`,
-    section: 'timeline',
-  }));
-
-  const allItems = [...sections, ...projectItems, ...timelineItems];
+  const allItems = [...sections];
 
   const handleSelect = (id: string) => {
     const element = document.getElementById(id);
@@ -59,18 +49,18 @@ export function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
       open={open}
       onOpenChange={onOpenChange}
       label="Global Command Palette"
-      className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4"
+      className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4"
     >
-      <div className="bg-terminal-card border border-terminal-border rounded-xl shadow-2xl w-full max-w-2xl overflow-hidden">
+      <div className="bg-[#14141e] border border-[#2a2a3a] rounded-xl shadow-2xl w-full max-w-2xl overflow-hidden">
         <Command.Input
           value={search}
           onValueChange={setSearch}
           placeholder="Type a command or search..."
-          className="w-full bg-transparent text-white text-lg px-6 py-4 outline-none border-b border-terminal-border font-mono placeholder:text-terminal-gray"
+          className="w-full bg-transparent text-white text-lg px-6 py-4 outline-none border-b border-[#2a2a3a] placeholder:text-[#8a8a9a] font-mono"
           autoFocus
         />
         <Command.List className="max-h-[400px] overflow-y-auto p-2">
-          <Command.Empty className="text-terminal-gray text-center py-8">
+          <Command.Empty className="text-[#8a8a9a] text-center py-8">
             No results found.
           </Command.Empty>
           {allItems.map((item) => (
@@ -78,16 +68,16 @@ export function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
               key={item.id}
               value={item.id}
               onSelect={() => handleSelect(item.id)}
-              className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-terminal-border cursor-pointer transition-colors"
+              className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-[#2a2a3a] cursor-pointer transition-colors"
             >
-              <span className="text-terminal-green">{item.label}</span>
-              <span className="ml-auto text-xs text-terminal-gray">{item.section}</span>
+              <span>{item.label}</span>
+              <span className="ml-auto text-xs text-[#8a8a9a]">jump to</span>
             </Command.Item>
           ))}
         </Command.List>
-        <div className="px-6 py-3 border-t border-terminal-border text-xs text-terminal-gray flex justify-between">
+        <div className="px-6 py-3 border-t border-[#2a2a3a] text-xs text-[#8a8a9a] flex justify-between">
           <span>⌘K to close</span>
-          <span>Navigate with ↑↓ · Enter to select</span>
+          <span>↑↓ navigate · Enter select</span>
         </div>
       </div>
     </Command.Dialog>

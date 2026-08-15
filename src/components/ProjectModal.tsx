@@ -41,14 +41,14 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           initial={{ scale: 0.9, y: 20 }}
           animate={{ scale: 1, y: 0 }}
           exit={{ scale: 0.9, y: 20 }}
-          className="bg-terminal-card border border-terminal-border rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-8"
+          className="bg-[#14141e] border border-[#2a2a3a] rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-8"
           onClick={(e) => e.stopPropagation()}
         >
           <div className="flex justify-between items-start mb-6">
             <h2 className="text-2xl font-bold text-white font-mono">{project.title}</h2>
             <button
               onClick={onClose}
-              className="text-terminal-gray hover:text-white transition text-2xl leading-none"
+              className="text-[#8a8a9a] hover:text-white transition text-2xl leading-none"
             >
               ✕
             </button>
@@ -58,20 +58,20 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
 
           <div className="space-y-4 text-sm">
             <div>
-              <span className="text-terminal-green font-mono">// problem</span>
+              <span className="text-violet-400 font-mono">// problem</span>
               <p className="text-gray-400 mt-1">{project.problem}</p>
             </div>
 
             <div>
-              <span className="text-terminal-blue font-mono">// my role</span>
+              <span className="text-cyan-400 font-mono">// my role</span>
               <p className="text-gray-400 mt-1">{project.role}</p>
             </div>
 
             <div>
-              <span className="text-terminal-orange font-mono">// tech stack</span>
+              <span className="text-violet-400 font-mono">// tech stack</span>
               <div className="flex flex-wrap gap-2 mt-1">
                 {project.tech.map(tech => (
-                  <span key={tech} className="bg-terminal-bg px-3 py-1 rounded text-xs text-terminal-green border border-terminal-border">
+                  <span key={tech} className="bg-[#0a0a0e] px-3 py-1 rounded text-xs text-cyan-400 border border-[#2a2a3a]">
                     {tech}
                   </span>
                 ))}
@@ -79,31 +79,18 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
             </div>
 
             <div>
-              <span className="text-terminal-purple font-mono">// what I'd improve</span>
+              <span className="text-cyan-400 font-mono">// what I'd improve</span>
               <p className="text-gray-400 mt-1">{project.improvements}</p>
             </div>
           </div>
 
-          <div className="flex gap-4 mt-6 pt-6 border-t border-terminal-border">
+          <div className="flex gap-4 mt-6 pt-6 border-t border-[#2a2a3a]">
             {project.github && (
-              <a
-                href={project.github}
-                target="_blank"
-                className="text-terminal-blue hover:underline font-mono text-sm"
-              >
+              <a href={project.github} target="_blank" className="text-violet-400 hover:underline font-mono text-sm">
                 GitHub →
               </a>
             )}
-            {project.live && (
-              <a
-                href={project.live}
-                target="_blank"
-                className="text-terminal-green hover:underline font-mono text-sm"
-              >
-                Live Demo →
-              </a>
-            )}
-            <span className="text-terminal-gray text-sm font-mono ml-auto">{project.year}</span>
+            <span className="text-[#8a8a9a] text-sm font-mono ml-auto">{project.year}</span>
           </div>
         </motion.div>
       </motion.div>
