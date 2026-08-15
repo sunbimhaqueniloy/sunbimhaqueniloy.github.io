@@ -78,3 +78,38 @@
 .light .text-gray-300 {
   color: #374151;
 }
+
+.light .text-gray-400 {
+  color: #6b7280;
+}
+
+.light .text-gray-500 {
+  color: #6b7280;
+}
+
+.light .bg-terminal-border {
+  background-color: #e5e7eb;
+}
+
+.light .border-terminal-border {
+  border-color: #d1d5db;
+}
+
+.light .hover\\:border-terminal-green:hover {
+  border-color: #059669;
+}
+
+/* Fix for command palette in light mode */
+.light .bg-black\\/50 {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.light .bg-terminal-card {
+  background-color: #ffffff;
+}
+
+.light code, 
+.light kbd {
+  background-color: #e5e7eb;
+  color: #1f2937;
+}

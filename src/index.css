@@ -7,18 +7,27 @@
 
 @layer base {
   body {
-    @apply bg-terminal-bg text-gray-200 font-mono antialiased transition-colors duration-300;
+    @apply bg-[#0a0a0f] text-gray-200 font-mono antialiased transition-colors duration-300;
   }
 
   ::-webkit-scrollbar {
     width: 8px;
   }
   ::-webkit-scrollbar-track {
-    @apply bg-terminal-bg;
+    @apply bg-[#0a0a0f];
   }
   ::-webkit-scrollbar-thumb {
-    @apply bg-terminal-border rounded-full;
+    @apply bg-[#2a2a3a] rounded-full;
   }
+}
+
+/* Light mode scrollbar */
+.light ::-webkit-scrollbar-track {
+  background-color: #f4f4f9;
+}
+
+.light ::-webkit-scrollbar-thumb {
+  background-color: #d1d5db;
 }
 
 /* Terminal cursor blink effect */
@@ -26,24 +35,20 @@
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
+
 .terminal-cursor {
   animation: blink 1s step-end infinite;
 }
 
-/* Dark theme variables */
-:root {
-  --terminal-bg: #0a0a0f;
-  --terminal-card: #14141e;
-  --terminal-border: #2a2a3a;
-  --terminal-gray: #8a8a9a;
+/* Fix for dark mode text colors */
+.dark .text-white {
+  color: #ffffff;
 }
 
-/* Light theme overrides */
-.light {
-  --terminal-bg: #f4f4f9;
-  --terminal-card: #ffffff;
-  --terminal-border: #d1d5db;
-  --terminal-gray: #6b7280;
+.dark .text-gray-300 {
+  color: #d1d5db;
 }
 
-/* Use CSS variables in Tailwind classes via: bg-[var(--terminal-bg)] if needed */
+.dark .text-gray-400 {
+  color: #9ca3af;
+}
