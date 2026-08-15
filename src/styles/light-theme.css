@@ -1,0 +1,80 @@
+/* Light Theme Overrides */
+.light {
+  --terminal-bg: #f4f4f9;
+  --terminal-card: #ffffff;
+  --terminal-border: #d1d5db;
+  --terminal-gray: #6b7280;
+}
+
+.light body {
+  background-color: #f4f4f9;
+  color: #1f2937;
+}
+
+.light .bg-terminal-bg {
+  background-color: #f4f4f9;
+}
+
+.light .bg-terminal-card {
+  background-color: #ffffff;
+}
+
+.light .border-terminal-border {
+  border-color: #d1d5db;
+}
+
+.light .text-terminal-gray {
+  color: #6b7280;
+}
+
+.light .text-white {
+  color: #1f2937;
+}
+
+.light .text-terminal-green {
+  color: #059669;
+}
+
+.light .text-terminal-blue {
+  color: #2563eb;
+}
+
+.light .text-terminal-purple {
+  color: #7c3aed;
+}
+
+.light .text-terminal-orange {
+  color: #ea580c;
+}
+
+.light .hover\\:border-terminal-blue:hover {
+  border-color: #2563eb;
+}
+
+.light .group:hover .group-hover\\:text-terminal-blue {
+  color: #2563eb;
+}
+
+.light .bg-terminal-green {
+  background-color: #059669;
+}
+
+.light .bg-terminal-card .border-terminal-border {
+  border-color: #e5e7eb;
+}
+
+.light .bg-terminal-bg .border-terminal-border {
+  border-color: #e5e7eb;
+}
+
+.light .bg-terminal-bg .text-gray-300 {
+  color: #374151;
+}
+
+.light .bg-terminal-bg .text-gray-400 {
+  color: #6b7280;
+}
+
+.light .text-gray-300 {
+  color: #374151;
+}

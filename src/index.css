@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap');
+@import './styles/light-theme.css';
 
 @tailwind base;
 @tailwind components;
@@ -6,8 +7,9 @@
 
 @layer base {
   body {
-    @apply bg-terminal-bg text-gray-200 font-mono antialiased;
+    @apply bg-terminal-bg text-gray-200 font-mono antialiased transition-colors duration-300;
   }
+
   ::-webkit-scrollbar {
     width: 8px;
   }
@@ -18,3 +20,30 @@
     @apply bg-terminal-border rounded-full;
   }
 }
+
+/* Terminal cursor blink effect */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.terminal-cursor {
+  animation: blink 1s step-end infinite;
+}
+
+/* Dark theme variables */
+:root {
+  --terminal-bg: #0a0a0f;
+  --terminal-card: #14141e;
+  --terminal-border: #2a2a3a;
+  --terminal-gray: #8a8a9a;
+}
+
+/* Light theme overrides */
+.light {
+  --terminal-bg: #f4f4f9;
+  --terminal-card: #ffffff;
+  --terminal-border: #d1d5db;
+  --terminal-gray: #6b7280;
+}
+
+/* Use CSS variables in Tailwind classes via: bg-[var(--terminal-bg)] if needed */
