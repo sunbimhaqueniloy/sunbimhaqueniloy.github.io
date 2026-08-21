@@ -4,16 +4,16 @@ import { projects } from './data/projects';
 import { skills } from './data/skills';
 import { timeline } from './data/timeline';
 import { funFacts } from './data/funFacts';
+import { education } from './data/education';
+import { achievements } from './data/achievements';
 import { CommandPalette } from './components/CommandPalette';
 import { ProjectModal } from './components/ProjectModal';
 import { AlgorithmVisualizer } from './components/AlgorithmVisualizer';
 import { ThemeToggle } from './components/ThemeToggle';
 import { ParticleBackground } from './components/ParticleBackground';
 import { TypingEffect } from './components/TypingEffect';
-import { GitHubStats } from './components/GitHubStats';
 import { FloatingPhoto } from './components/FloatingPhoto';
 import { ScrollIndicator } from './components/ScrollIndicator';
-import { FunFacts } from './components/FunFacts';
 
 function App() {
   const [commandOpen, setCommandOpen] = useState(false);
@@ -94,40 +94,10 @@ function App() {
               </button>
             </div>
             <div className="flex justify-center lg:justify-start gap-5 mt-8 text-2xl">
-              <a 
-                href="https://github.com/sunbimhaqueniloy" 
-                className="text-[#8a8a9a] hover:text-violet-400 transition-transform hover:scale-110" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-              >
-                ⌨
-              </a>
-              <a 
-                href="https://linkedin.com/in/sunbim-haque-niloy-199b49211" 
-                className="text-[#8a8a9a] hover:text-cyan-400 transition-transform hover:scale-110" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-              >
-                🔗
-              </a>
-              <a 
-                href="https://x.com/Niloy84865" 
-                className="text-[#8a8a9a] hover:text-violet-400 transition-transform hover:scale-110" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                aria-label="X (Twitter)"
-              >
-                🐦
-              </a>
-              <a 
-                href="mailto:sunbimhaqueniloy@gmail.com" 
-                className="text-[#8a8a9a] hover:text-violet-400 transition-transform hover:scale-110"
-                aria-label="Email"
-              >
-                ✉
-              </a>
+              <a href="https://github.com/sunbimhaqueniloy" className="text-[#8a8a9a] hover:text-violet-400 transition-transform hover:scale-110" target="_blank">⌨</a>
+              <a href="https://linkedin.com/in/sunbim-haque-niloy-199b49211" className="text-[#8a8a9a] hover:text-cyan-400 transition-transform hover:scale-110" target="_blank">🔗</a>
+              <a href="https://x.com/Niloy84865" className="text-[#8a8a9a] hover:text-violet-400 transition-transform hover:scale-110" target="_blank">🐦</a>
+              <a href="mailto:sunbimhaqueniloy@gmail.com" className="text-[#8a8a9a] hover:text-violet-400 transition-transform hover:scale-110">✉</a>
             </div>
           </motion.div>
 
@@ -146,7 +116,7 @@ function App() {
               >
                 <img
                   src="/profile.png"
-                  alt="Niloy — CSE undergrad at IUT"
+                  alt="Niloy"
                   className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-[360px] lg:h-[360px] rounded-full object-cover border-[3px] border-violet-500/30 shadow-2xl shadow-violet-500/20"
                   style={{
                     transform: 'perspective(1000px)',
@@ -157,13 +127,11 @@ function App() {
                     const rect = e.currentTarget.getBoundingClientRect();
                     const x = (e.clientX - rect.left - rect.width / 2) / 25;
                     const y = (e.clientY - rect.top - rect.height / 2) / 25;
-                    e.currentTarget.style.transform = 
-                      `perspective(1000px) rotateY(${x}deg) rotateX(${-y}deg) scale(1.02)`;
+                    e.currentTarget.style.transform = `perspective(1000px) rotateY(${x}deg) rotateX(${-y}deg) scale(1.02)`;
                     e.currentTarget.style.borderColor = 'rgba(124, 58, 237, 0.6)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 
-                      'perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1)';
+                    e.currentTarget.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1)';
                     e.currentTarget.style.borderColor = 'rgba(124, 58, 237, 0.3)';
                   }}
                   loading="eager"
@@ -181,13 +149,12 @@ function App() {
 
       {/* ===== ABOUT ===== */}
       <section id="about" className="max-w-6xl mx-auto py-16 border-b border-[#2a2a3a] scroll-mt-20">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeUp}
-        >
-          <h2 className="text-2xl font-bold text-violet-400 mb-6 font-mono">// about</h2>
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+          <div className="flex items-center gap-3 mb-6">
+            <span className="text-3xl">👨‍💻</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-white">About Me</h2>
+            <div className="flex-1 h-px bg-gradient-to-r from-violet-500/50 to-transparent ml-4" />
+          </div>
           <p className="text-gray-300 max-w-4xl leading-relaxed text-lg">
             I'm a <span className="text-violet-400 font-semibold">Computer Science & Engineering</span> student at 
             <span className="text-cyan-400 font-semibold"> Islamic University of Technology (IUT), Bangladesh</span>, 
@@ -197,15 +164,15 @@ function App() {
             Always learning, always creating, and always looking for the next thing to build.
           </p>
           <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-[#14141e] p-4 rounded-lg border border-[#2a2a3a] text-center">
+            <div className="bg-[#14141e] p-4 rounded-lg border border-[#2a2a3a] text-center hover:border-violet-500 transition">
               <div className="text-violet-400 text-3xl font-bold font-mono">12+</div>
               <div className="text-[#8a8a9a] text-sm">Projects Built</div>
             </div>
-            <div className="bg-[#14141e] p-4 rounded-lg border border-[#2a2a3a] text-center">
+            <div className="bg-[#14141e] p-4 rounded-lg border border-[#2a2a3a] text-center hover:border-cyan-400 transition">
               <div className="text-cyan-400 text-3xl font-bold font-mono">4</div>
               <div className="text-[#8a8a9a] text-sm">National Olympiad Titles</div>
             </div>
-            <div className="bg-[#14141e] p-4 rounded-lg border border-[#2a2a3a] text-center">
+            <div className="bg-[#14141e] p-4 rounded-lg border border-[#2a2a3a] text-center hover:border-violet-500 transition">
               <div className="text-violet-400 text-3xl font-bold font-mono">4×</div>
               <div className="text-[#8a8a9a] text-sm">GPA 5.00 + Scholarships</div>
             </div>
@@ -213,30 +180,152 @@ function App() {
         </motion.div>
       </section>
 
+      {/* ===== EDUCATION ===== */}
+      <section id="education" className="max-w-6xl mx-auto py-16 border-b border-[#2a2a3a] scroll-mt-20">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+          <div className="flex items-center gap-3 mb-6">
+            <span className="text-3xl">🎓</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-white">Education</h2>
+            <div className="flex-1 h-px bg-gradient-to-r from-cyan-400/50 to-transparent ml-4" />
+          </div>
+          <div className="space-y-6">
+            {education.map((item) => (
+              <div key={item.id} className="bg-[#14141e] p-6 rounded-lg border border-[#2a2a3a] hover:border-violet-500 transition">
+                <div className="flex items-start gap-4">
+                  <span className="text-3xl">{item.icon}</span>
+                  <div className="flex-1">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+                      <div>
+                        <h3 className="text-xl font-bold text-white">{item.institution}</h3>
+                        <p className="text-cyan-400 font-mono">{item.degree}</p>
+                      </div>
+                      <span className="text-[#8a8a9a] text-sm font-mono bg-[#0a0a0e] px-3 py-1 rounded border border-[#2a2a3a]">{item.period}</span>
+                    </div>
+                    <p className="text-[#8a8a9a] mt-2 text-sm">{item.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* ===== ACHIEVEMENTS ===== */}
+      <section id="achievements" className="max-w-6xl mx-auto py-16 border-b border-[#2a2a3a] scroll-mt-20">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+          <div className="flex items-center gap-3 mb-6">
+            <span className="text-3xl">🏆</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-white">Achievements</h2>
+            <div className="flex-1 h-px bg-gradient-to-r from-violet-500/50 to-transparent ml-4" />
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {achievements.map((item) => (
+              <div key={item.id} className={`bg-[#14141e] p-5 rounded-lg border border-[#2a2a3a] hover:border-violet-500 transition group ${item.id === 'talentpool' ? 'md:col-span-2' : ''}`}>
+                <div className="flex items-start gap-3">
+                  <span className="text-2xl group-hover:scale-110 transition-transform">{item.icon}</span>
+                  <div>
+                    <h4 className="text-white font-semibold">{item.title}</h4>
+                    <p className="text-cyan-400 text-sm font-mono">{item.subtitle}</p>
+                    {item.span && <p className="text-[#8a8a9a] text-xs font-mono mt-0.5">{item.span}</p>}
+                    <p className="text-[#8a8a9a] text-sm mt-1">{item.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* ===== PROJECTS ===== */}
+      <section id="projects" className="max-w-6xl mx-auto py-16 border-b border-[#2a2a3a] scroll-mt-20">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
+          <div className="flex items-center gap-3 mb-6">
+            <span className="text-3xl">🚀</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-white">Projects</h2>
+            <div className="flex-1 h-px bg-gradient-to-r from-cyan-400/50 to-transparent ml-4" />
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {projects.map((project) => (
+              <motion.div
+                key={project.id}
+                variants={fadeUp}
+                onClick={() => setSelectedProject(project)}
+                className="bg-[#14141e] p-6 rounded-lg border border-[#2a2a3a] hover:border-violet-500 transition-all duration-300 group cursor-pointer hover:shadow-lg hover:shadow-violet-500/10"
+              >
+                <div className="flex items-start justify-between">
+                  <h3 className="text-xl font-bold text-white group-hover:text-violet-400 transition">{project.title}</h3>
+                  <span className="text-xs text-[#8a8a9a] font-mono bg-[#0a0a0e] px-2 py-1 rounded border border-[#2a2a3a]">{project.year}</span>
+                </div>
+                <p className="text-[#8a8a9a] text-sm mt-1">{project.description}</p>
+                <div className="flex flex-wrap gap-2 mt-3">
+                  {project.tech.slice(0, 4).map((tech) => (
+                    <span key={tech} className="text-xs bg-[#0a0a0e] px-2 py-1 rounded text-cyan-400 border border-[#2a2a3a]">{tech}</span>
+                  ))}
+                  {project.tech.length > 4 && <span className="text-xs text-[#8a8a9a] px-2 py-1">+{project.tech.length - 4}</span>}
+                </div>
+                <div className="flex gap-4 mt-4 text-sm">
+                  <span className="text-violet-400 hover:underline cursor-pointer">Click to expand →</span>
+                  <span className="text-[#8a8a9a] ml-auto">{project.semester}</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          <div className="text-center mt-6">
+            <a href="https://github.com/sunbimhaqueniloy" target="_blank" className="text-[#8a8a9a] hover:text-violet-400 transition font-mono text-sm border border-[#2a2a3a] px-6 py-2 rounded-lg inline-block hover:border-violet-500">
+              View all projects on GitHub →
+            </a>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* ===== TIMELINE ===== */}
+      <section id="timeline" className="max-w-6xl mx-auto py-16 border-b border-[#2a2a3a] scroll-mt-20">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
+          <div className="flex items-center gap-3 mb-6">
+            <span className="text-3xl">📅</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-white">Timeline</h2>
+            <div className="flex-1 h-px bg-gradient-to-r from-violet-500/50 to-transparent ml-4" />
+          </div>
+          <div className="relative pl-8 border-l-2 border-[#2a2a3a]">
+            {timeline.map((item, idx) => (
+              <motion.div key={idx} variants={fadeUp} className={`mb-8 ${item.isFuture ? 'opacity-40' : ''}`}>
+                <div className="absolute w-3 h-3 bg-violet-500 rounded-full -left-[7px] mt-1.5"></div>
+                <div className="flex flex-col md:flex-row md:items-center md:gap-4">
+                  <span className="text-[#8a8a9a] text-sm font-mono min-w-[120px]">{item.semester}</span>
+                  <div>
+                    <h3 className="text-white font-semibold">{item.title}</h3>
+                    <p className="text-[#8a8a9a] text-sm">{item.description}</p>
+                  </div>
+                  {item.isFuture && <span className="text-xs bg-[#2a2a3a] px-2 py-0.5 rounded text-cyan-400 ml-auto">Coming</span>}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
       {/* ===== SKILLS ===== */}
       <section id="skills" className="max-w-6xl mx-auto py-16 border-b border-[#2a2a3a] scroll-mt-20">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={stagger}
-        >
-          <h2 className="text-2xl font-bold text-violet-400 mb-6 font-mono">// skills</h2>
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
+          <div className="flex items-center gap-3 mb-6">
+            <span className="text-3xl">⚡</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-white">Skills</h2>
+            <div className="flex-1 h-px bg-gradient-to-r from-cyan-400/50 to-transparent ml-4" />
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {Object.entries(skills).map(([category, items]) => (
-              <motion.div
-                key={category}
-                variants={fadeUp}
-                className="bg-[#14141e] p-5 rounded-lg border border-[#2a2a3a] hover:border-violet-500 transition"
-              >
-                <h3 className="text-cyan-400 font-semibold mb-3 capitalize">
-                  {category === 'mlAi' ? 'ML / AI' : 
-                   category === 'design' ? 'Design & Architecture' :
-                   category === 'data' ? 'Data & Analysis' : category}
+              <motion.div key={category} variants={fadeUp} className="bg-[#14141e] p-5 rounded-lg border border-[#2a2a3a] hover:border-violet-500 transition">
+                <h3 className="text-cyan-400 font-semibold mb-3 capitalize text-lg">
+                  {category === 'mlAi' ? '🤖 ML / AI' : 
+                   category === 'design' ? '🎨 Design & Architecture' :
+                   category === 'data' ? '📊 Data & Analysis' : 
+                   category === 'languages' ? '💻 Languages' :
+                   category === 'web' ? '🌐 Web' :
+                   category === 'tools' ? '🔧 Tools' : category}
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {items.map((skill: string) => (
-                    <span key={skill} className="bg-[#0a0a0e] px-3 py-1 rounded-full text-sm text-gray-300 border border-[#2a2a3a]">
+                    <span key={skill} className="bg-[#0a0a0e] px-3 py-1 rounded-full text-sm text-gray-300 border border-[#2a2a3a] hover:border-violet-500 transition">
                       {skill}
                     </span>
                   ))}
@@ -247,120 +336,17 @@ function App() {
         </motion.div>
       </section>
 
-      {/* ===== PROJECTS ===== */}
-      <section id="projects" className="max-w-6xl mx-auto py-16 border-b border-[#2a2a3a] scroll-mt-20">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={stagger}
-        >
-          <h2 className="text-2xl font-bold text-violet-400 mb-6 font-mono">// selected projects</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {projects.slice(0, 8).map((project) => (
-              <motion.div
-                key={project.id}
-                variants={fadeUp}
-                onClick={() => setSelectedProject(project)}
-                className="bg-[#14141e] p-6 rounded-lg border border-[#2a2a3a] hover:border-violet-500 transition-all duration-300 group cursor-pointer hover:shadow-lg hover:shadow-violet-500/10"
-              >
-                <div className="flex items-start justify-between">
-                  <h3 className="text-xl font-bold text-white group-hover:text-violet-400 transition">
-                    {project.title}
-                  </h3>
-                  <span className="text-xs text-[#8a8a9a] font-mono">{project.year}</span>
-                </div>
-                <p className="text-[#8a8a9a] text-sm mt-1">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mt-3">
-                  {project.tech.slice(0, 4).map((tech) => (
-                    <span key={tech} className="text-xs bg-[#0a0a0e] px-2 py-1 rounded text-cyan-400 border border-[#2a2a3a]">
-                      {tech}
-                    </span>
-                  ))}
-                  {project.tech.length > 4 && (
-                    <span className="text-xs text-[#8a8a9a] px-2 py-1">+{project.tech.length - 4}</span>
-                  )}
-                </div>
-                <div className="flex gap-4 mt-4 text-sm">
-                  <span className="text-violet-400 hover:underline cursor-pointer">Click to expand →</span>
-                  <span className="text-[#8a8a9a] ml-auto">{project.semester}</span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-          <div className="text-center mt-6">
-            <a 
-              href="https://github.com/sunbimhaqueniloy" 
-              target="_blank"
-              className="text-[#8a8a9a] hover:text-violet-400 transition font-mono text-sm border border-[#2a2a3a] px-6 py-2 rounded-lg inline-block hover:border-violet-500"
-            >
-              View all projects on GitHub →
-            </a>
-          </div>
-        </motion.div>
-      </section>
-
-      {/* ===== ALGORITHM VISUALIZER ===== */}
-      <section id="visualizer" className="max-w-6xl mx-auto py-16 border-b border-[#2a2a3a] scroll-mt-20">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeUp}
-        >
-          <h2 className="text-2xl font-bold text-violet-400 mb-6 font-mono">// algorithm visualizer</h2>
-          <AlgorithmVisualizer />
-        </motion.div>
-      </section>
-
-      {/* ===== TIMELINE ===== */}
-      <section id="timeline" className="max-w-6xl mx-auto py-16 border-b border-[#2a2a3a] scroll-mt-20">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={stagger}
-        >
-          <h2 className="text-2xl font-bold text-violet-400 mb-6 font-mono">// timeline</h2>
-          <div className="relative pl-8 border-l-2 border-[#2a2a3a]">
-            {timeline.slice(0, 10).map((item, idx) => (
-              <motion.div
-                key={idx}
-                variants={fadeUp}
-                className={`mb-8 ${item.isFuture ? 'opacity-40' : ''}`}
-              >
-                <div className="absolute w-3 h-3 bg-violet-500 rounded-full -left-[7px] mt-1.5"></div>
-                <div className="flex flex-col md:flex-row md:items-center md:gap-4">
-                  <span className="text-[#8a8a9a] text-sm font-mono min-w-[120px]">{item.semester}</span>
-                  <div>
-                    <h3 className="text-white font-semibold">{item.title}</h3>
-                    <p className="text-[#8a8a9a] text-sm">{item.description}</p>
-                  </div>
-                  {item.isFuture && (
-                    <span className="text-xs bg-[#2a2a3a] px-2 py-0.5 rounded text-cyan-400 ml-auto">Coming</span>
-                  )}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-      </section>
-
       {/* ===== FUN FACTS ===== */}
       <section id="funfacts" className="max-w-6xl mx-auto py-16 border-b border-[#2a2a3a] scroll-mt-20">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeUp}
-        >
-          <h2 className="text-2xl font-bold text-violet-400 mb-6 font-mono">// fun facts</h2>
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+          <div className="flex items-center gap-3 mb-6">
+            <span className="text-3xl">✨</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-white">Fun Facts</h2>
+            <div className="flex-1 h-px bg-gradient-to-r from-violet-500/50 to-transparent ml-4" />
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {funFacts.slice(0, 8).map((fact, i) => (
-              <div
-                key={i}
-                className="bg-[#14141e] p-4 rounded-lg border border-[#2a2a3a] hover:border-violet-500 transition group"
-              >
+            {funFacts.map((fact, i) => (
+              <div key={i} className="bg-[#14141e] p-4 rounded-lg border border-[#2a2a3a] hover:border-violet-500 transition group">
                 <div className="flex items-center gap-3">
                   <span className="text-2xl group-hover:scale-110 transition-transform">{fact.emoji}</span>
                   <p className="text-sm text-gray-300">{fact.text}</p>
@@ -371,14 +357,21 @@ function App() {
         </motion.div>
       </section>
 
+      {/* ===== ALGORITHM VISUALIZER ===== */}
+      <section id="visualizer" className="max-w-6xl mx-auto py-16 border-b border-[#2a2a3a] scroll-mt-20">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+          <div className="flex items-center gap-3 mb-6">
+            <span className="text-3xl">📊</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-white">Algorithm Visualizer</h2>
+            <div className="flex-1 h-px bg-gradient-to-r from-cyan-400/50 to-transparent ml-4" />
+          </div>
+          <AlgorithmVisualizer />
+        </motion.div>
+      </section>
+
       {/* ===== CONTACT ===== */}
       <footer id="contact" className="max-w-6xl mx-auto py-12 text-center text-[#8a8a9a] text-sm scroll-mt-20">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeUp}
-        >
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <p className="text-white font-mono text-lg mb-4">Let's build something together.</p>
           <p className="mb-6">
             <span className="text-violet-400">$</span> echo "sunbimhaqueniloy@gmail.com"
@@ -393,9 +386,7 @@ function App() {
           </div>
           <div className="mt-8 pt-6 border-t border-[#2a2a3a] text-xs text-[#8a8a9a]/60">
             <p>© {new Date().getFullYear()} Niloy · Built with React + Vite + Tailwind</p>
-            <p className="mt-2">
-              Press <kbd className="px-2 py-1 bg-[#2a2a3a] rounded text-violet-400">⌘K</kbd> to navigate
-            </p>
+            <p className="mt-2">Press <kbd className="px-2 py-1 bg-[#2a2a3a] rounded text-violet-400">⌘K</kbd> to navigate</p>
           </div>
         </motion.div>
       </footer>
