@@ -151,7 +151,7 @@ function App() {
       <section id="about" className="max-w-6xl mx-auto py-16 border-b border-[#2a2a3a] scroll-mt-20">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <div className="flex items-center gap-3 mb-6">
-            <span className="text-3xl">👨‍💻</span>
+            <span className="text-3xl">👨</span>
             <h2 className="text-3xl md:text-4xl font-bold text-white">About Me</h2>
             <div className="flex-1 h-px bg-gradient-to-r from-violet-500/50 to-transparent ml-4" />
           </div>
@@ -184,7 +184,7 @@ function App() {
       <section id="education" className="max-w-6xl mx-auto py-16 border-b border-[#2a2a3a] scroll-mt-20">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <div className="flex items-center gap-3 mb-6">
-            <span className="text-3xl">🎓</span>
+            <span className="text-3xl"></span>
             <h2 className="text-3xl md:text-4xl font-bold text-white">Education</h2>
             <div className="flex-1 h-px bg-gradient-to-r from-cyan-400/50 to-transparent ml-4" />
           </div>
@@ -214,7 +214,7 @@ function App() {
       <section id="achievements" className="max-w-6xl mx-auto py-16 border-b border-[#2a2a3a] scroll-mt-20">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <div className="flex items-center gap-3 mb-6">
-            <span className="text-3xl">🏆</span>
+            <span className="text-3xl"></span>
             <h2 className="text-3xl md:text-4xl font-bold text-white">Achievements</h2>
             <div className="flex-1 h-px bg-gradient-to-r from-violet-500/50 to-transparent ml-4" />
           </div>
@@ -240,7 +240,7 @@ function App() {
       <section id="projects" className="max-w-6xl mx-auto py-16 border-b border-[#2a2a3a] scroll-mt-20">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
           <div className="flex items-center gap-3 mb-6">
-            <span className="text-3xl">🚀</span>
+            <span className="text-3xl"></span>
             <h2 className="text-3xl md:text-4xl font-bold text-white">Projects</h2>
             <div className="flex-1 h-px bg-gradient-to-r from-cyan-400/50 to-transparent ml-4" />
           </div>
@@ -282,7 +282,7 @@ function App() {
       <section id="timeline" className="max-w-6xl mx-auto py-16 border-b border-[#2a2a3a] scroll-mt-20">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
           <div className="flex items-center gap-3 mb-6">
-            <span className="text-3xl">📅</span>
+            <span className="text-3xl"></span>
             <h2 className="text-3xl md:text-4xl font-bold text-white">Timeline</h2>
             <div className="flex-1 h-px bg-gradient-to-r from-violet-500/50 to-transparent ml-4" />
           </div>
@@ -316,12 +316,12 @@ function App() {
             {Object.entries(skills).map(([category, items]) => (
               <motion.div key={category} variants={fadeUp} className="bg-[#14141e] p-5 rounded-lg border border-[#2a2a3a] hover:border-violet-500 transition">
                 <h3 className="text-cyan-400 font-semibold mb-3 capitalize text-lg">
-                  {category === 'mlAi' ? '🤖 ML / AI' : 
-                   category === 'design' ? '🎨 Design & Architecture' :
-                   category === 'data' ? '📊 Data & Analysis' : 
-                   category === 'languages' ? '💻 Languages' :
-                   category === 'web' ? '🌐 Web' :
-                   category === 'tools' ? '🔧 Tools' : category}
+                  {category === 'mlAi' ? ' ML / AI' : 
+                   category === 'design' ? ' Design & Architecture' :
+                   category === 'data' ? ' Data & Analysis' : 
+                   category === 'languages' ? ' Languages' :
+                   category === 'web' ? ' Web' :
+                   category === 'tools' ? ' Tools' : category}
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {items.map((skill: string) => (
@@ -340,7 +340,7 @@ function App() {
       <section id="funfacts" className="max-w-6xl mx-auto py-16 border-b border-[#2a2a3a] scroll-mt-20">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <div className="flex items-center gap-3 mb-6">
-            <span className="text-3xl">✨</span>
+            <span className="text-3xl"></span>
             <h2 className="text-3xl md:text-4xl font-bold text-white">Fun Facts</h2>
             <div className="flex-1 h-px bg-gradient-to-r from-violet-500/50 to-transparent ml-4" />
           </div>
@@ -361,7 +361,7 @@ function App() {
       <section id="visualizer" className="max-w-6xl mx-auto py-16 border-b border-[#2a2a3a] scroll-mt-20">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <div className="flex items-center gap-3 mb-6">
-            <span className="text-3xl">📊</span>
+            <span className="text-3xl"></span>
             <h2 className="text-3xl md:text-4xl font-bold text-white">Algorithm Visualizer</h2>
             <div className="flex-1 h-px bg-gradient-to-r from-cyan-400/50 to-transparent ml-4" />
           </div>
