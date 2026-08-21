@@ -40,63 +40,140 @@ function App() {
       <ThemeToggle />
 
       {/* ===== HERO ===== */}
-      <header id="hero" className="max-w-6xl mx-auto py-12 md:py-20 border-b border-[#2a2a3a] relative scroll-mt-20">
-        <div className="flex flex-col-reverse md:flex-row md:items-center md:justify-between gap-8">
+      <header id="hero" className="min-h-[85vh] max-w-6xl mx-auto py-12 md:py-20 border-b border-[#2a2a3a] relative scroll-mt-20 flex items-center">
+        <div className="flex flex-col-reverse lg:flex-row lg:items-center lg:justify-between gap-12 w-full">
           <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={fadeUp}
-            className="flex-1"
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="flex-1 text-center lg:text-left"
           >
-            <div className="flex items-center gap-2 text-sm text-[#8a8a9a] mb-2">
+            <div className="flex items-center justify-center lg:justify-start gap-2 text-sm text-[#8a8a9a] mb-2">
               <span className="text-violet-400">$</span> whoami
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-mono">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-mono leading-tight">
               <span className="text-white">niloy</span>
               <span className="text-[#8a8a9a]">@</span>
               <span className="text-cyan-400">iut</span>
               <span className="terminal-cursor text-violet-500 ml-1">█</span>
             </h1>
-            <div className="mt-3">
+            <div className="mt-3 min-h-[2.5rem]">
               <TypingEffect
                 texts={[
                   'CSE undergrad · building intelligent systems',
-                  'ML / AI Engineer · ECG Arrhythmia Research',
-                  'Systems Architect · Distributed Computing',
-                  'Full-stack Developer · React + Go'
+                  'ML / AI · Exoplanet Hunter · ECG Research',
+                  'Game Dev · Sheikh & Run · Raylib',
+                  'Systems Design · FSM · Distributed Computing',
+                  'Full-stack · React · Java · Go'
                 ]}
+                speed={70}
+                delay={2500}
               />
             </div>
-            <div className="flex flex-wrap gap-4 mt-6 text-sm">
-              <span className="text-violet-400">●</span>
-              <span className="text-[#8a8a9a]">ML / AI</span>
-              <span className="text-[#8a8a9a]">|</span>
-              <span className="text-cyan-400">●</span>
-              <span className="text-[#8a8a9a]">Systems</span>
-              <span className="text-[#8a8a9a]">|</span>
-              <span className="text-violet-400">●</span>
-              <span className="text-[#8a8a9a]">Full-stack</span>
+            <div className="flex flex-wrap justify-center lg:justify-start gap-4 mt-6 text-sm">
+              <span className="flex items-center gap-1 text-[#8a8a9a]">
+                <span className="text-violet-400">●</span> ML / AI
+              </span>
+              <span className="text-[#2a2a3a]">|</span>
+              <span className="flex items-center gap-1 text-[#8a8a9a]">
+                <span className="text-cyan-400">●</span> Game Dev
+              </span>
+              <span className="text-[#2a2a3a]">|</span>
+              <span className="flex items-center gap-1 text-[#8a8a9a]">
+                <span className="text-violet-400">●</span> Systems
+              </span>
+              <span className="text-[#2a2a3a]">|</span>
+              <span className="flex items-center gap-1 text-[#8a8a9a]">
+                <span className="text-cyan-400">●</span> Full-stack
+              </span>
               <button
                 onClick={() => setCommandOpen(true)}
-                className="ml-4 text-xs bg-[#2a2a3a] px-3 py-1 rounded text-[#8a8a9a] hover:text-violet-400 transition font-mono"
+                className="ml-2 text-xs bg-[#2a2a3a] px-3 py-1.5 rounded text-[#8a8a9a] hover:text-violet-400 hover:border-violet-500 transition border border-transparent font-mono"
               >
                 ⌘K
               </button>
             </div>
-            <div className="flex gap-4 mt-6 text-2xl">
-              <a href="https://github.com/sunbimhaqueniloy" className="text-[#8a8a9a] hover:text-violet-400 transition" target="_blank">⌨</a>
-              <a href="https://linkedin.com/in/sunbimhaqueniloy" className="text-[#8a8a9a] hover:text-cyan-400 transition" target="_blank">🔗</a>
-              <a href="mailto:sunbimhaqueniloy@gmail.com" className="text-[#8a8a9a] hover:text-violet-400 transition">✉</a>
+            <div className="flex justify-center lg:justify-start gap-5 mt-8 text-2xl">
+              <a 
+                href="https://github.com/sunbimhaqueniloy" 
+                className="text-[#8a8a9a] hover:text-violet-400 transition-transform hover:scale-110" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+              >
+                ⌨
+              </a>
+              <a 
+                href="https://linkedin.com/in/sunbim-haque-niloy-199b49211" 
+                className="text-[#8a8a9a] hover:text-cyan-400 transition-transform hover:scale-110" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
+                🔗
+              </a>
+              <a 
+                href="https://x.com/Niloy84865" 
+                className="text-[#8a8a9a] hover:text-violet-400 transition-transform hover:scale-110" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="X (Twitter)"
+              >
+                🐦
+              </a>
+              <a 
+                href="mailto:sunbimhaqueniloy@gmail.com" 
+                className="text-[#8a8a9a] hover:text-violet-400 transition-transform hover:scale-110"
+                aria-label="Email"
+              >
+                ✉
+              </a>
             </div>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2, type: 'spring' }}
-            className="flex-shrink-0"
+            transition={{ duration: 0.8, delay: 0.2, type: 'spring', bounce: 0.4 }}
+            className="flex-shrink-0 flex justify-center lg:justify-end"
           >
-            <FloatingPhoto src="/profile.png" alt="Niloy" />
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-violet-500/30 via-cyan-400/20 to-violet-500/30 blur-3xl rounded-full animate-pulse" />
+              <motion.div
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                className="relative z-10"
+              >
+                <img
+                  src="/profile.png"
+                  alt="Niloy — CSE undergrad at IUT"
+                  className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-[360px] lg:h-[360px] rounded-full object-cover border-[3px] border-violet-500/30 shadow-2xl shadow-violet-500/20"
+                  style={{
+                    transform: 'perspective(1000px)',
+                    transition: 'transform 0.15s ease-out',
+                    willChange: 'transform',
+                  }}
+                  onMouseMove={(e) => {
+                    const rect = e.currentTarget.getBoundingClientRect();
+                    const x = (e.clientX - rect.left - rect.width / 2) / 25;
+                    const y = (e.clientY - rect.top - rect.height / 2) / 25;
+                    e.currentTarget.style.transform = 
+                      `perspective(1000px) rotateY(${x}deg) rotateX(${-y}deg) scale(1.02)`;
+                    e.currentTarget.style.borderColor = 'rgba(124, 58, 237, 0.6)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 
+                      'perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1)';
+                    e.currentTarget.style.borderColor = 'rgba(124, 58, 237, 0.3)';
+                  }}
+                  loading="eager"
+                />
+              </motion.div>
+              <div className="absolute -inset-4 border border-violet-500/10 rounded-full animate-spin-slow" />
+              <div className="absolute -inset-10 border border-cyan-400/5 rounded-full animate-spin-slow" style={{ animationDirection: 'reverse', animationDuration: '25s' }} />
+              <div className="absolute -top-2 -right-2 w-3 h-3 bg-violet-400 rounded-full animate-pulse" />
+              <div className="absolute -bottom-2 -left-2 w-2 h-2 bg-cyan-400 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }} />
+            </div>
           </motion.div>
         </div>
         <ScrollIndicator />
@@ -111,16 +188,27 @@ function App() {
           variants={fadeUp}
         >
           <h2 className="text-2xl font-bold text-violet-400 mb-6 font-mono">// about</h2>
-          <p className="text-gray-300 max-w-3xl leading-relaxed">
-            I'm a CSE undergraduate at Islamic University of Technology (IUT), currently in my 4th semester,
-            with a passion for building intelligent, well-architected systems. My work spans
-            <span className="text-violet-400"> machine learning</span> (ECG arrhythmia classification),
-            <span className="text-cyan-400"> distributed systems</span> (Diceymio), and
-            <span className="text-violet-400"> full-stack development</span> (BloodLink).
-            I believe the best systems are both elegant and functional.
+          <p className="text-gray-300 max-w-4xl leading-relaxed text-lg">
+            I'm a <span className="text-violet-400 font-semibold">Computer Science & Engineering</span> student at 
+            <span className="text-cyan-400 font-semibold"> Islamic University of Technology (IUT), Bangladesh</span>, 
+            passionate about <span className="text-violet-400">web development</span>, 
+            <span className="text-cyan-400"> AI/ML</span>, and <span className="text-violet-400">UI/UX design</span>. 
+            I enjoy building things, exploring new technologies, and turning ideas into practical digital experiences. 
+            Always learning, always creating, and always looking for the next thing to build.
           </p>
-          <div className="mt-6">
-            <GitHubStats />
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="bg-[#14141e] p-4 rounded-lg border border-[#2a2a3a] text-center">
+              <div className="text-violet-400 text-3xl font-bold font-mono">12+</div>
+              <div className="text-[#8a8a9a] text-sm">Projects Built</div>
+            </div>
+            <div className="bg-[#14141e] p-4 rounded-lg border border-[#2a2a3a] text-center">
+              <div className="text-cyan-400 text-3xl font-bold font-mono">4</div>
+              <div className="text-[#8a8a9a] text-sm">National Olympiad Titles</div>
+            </div>
+            <div className="bg-[#14141e] p-4 rounded-lg border border-[#2a2a3a] text-center">
+              <div className="text-violet-400 text-3xl font-bold font-mono">4×</div>
+              <div className="text-[#8a8a9a] text-sm">GPA 5.00 + Scholarships</div>
+            </div>
           </div>
         </motion.div>
       </section>
@@ -134,14 +222,18 @@ function App() {
           variants={stagger}
         >
           <h2 className="text-2xl font-bold text-violet-400 mb-6 font-mono">// skills</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {Object.entries(skills).map(([category, items]) => (
               <motion.div
                 key={category}
                 variants={fadeUp}
                 className="bg-[#14141e] p-5 rounded-lg border border-[#2a2a3a] hover:border-violet-500 transition"
               >
-                <h3 className="text-cyan-400 font-semibold mb-3 capitalize">{category.replace('mlAi', 'ML / AI')}</h3>
+                <h3 className="text-cyan-400 font-semibold mb-3 capitalize">
+                  {category === 'mlAi' ? 'ML / AI' : 
+                   category === 'design' ? 'Design & Architecture' :
+                   category === 'data' ? 'Data & Analysis' : category}
+                </h3>
                 <div className="flex flex-wrap gap-2">
                   {items.map((skill: string) => (
                     <span key={skill} className="bg-[#0a0a0e] px-3 py-1 rounded-full text-sm text-gray-300 border border-[#2a2a3a]">
@@ -163,18 +255,21 @@ function App() {
           viewport={{ once: true }}
           variants={stagger}
         >
-          <h2 className="text-2xl font-bold text-violet-400 mb-6 font-mono">// projects</h2>
+          <h2 className="text-2xl font-bold text-violet-400 mb-6 font-mono">// selected projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {projects.map((project) => (
+            {projects.slice(0, 8).map((project) => (
               <motion.div
                 key={project.id}
                 variants={fadeUp}
                 onClick={() => setSelectedProject(project)}
                 className="bg-[#14141e] p-6 rounded-lg border border-[#2a2a3a] hover:border-violet-500 transition-all duration-300 group cursor-pointer hover:shadow-lg hover:shadow-violet-500/10"
               >
-                <h3 className="text-xl font-bold text-white group-hover:text-violet-400 transition">
-                  {project.title}
-                </h3>
+                <div className="flex items-start justify-between">
+                  <h3 className="text-xl font-bold text-white group-hover:text-violet-400 transition">
+                    {project.title}
+                  </h3>
+                  <span className="text-xs text-[#8a8a9a] font-mono">{project.year}</span>
+                </div>
                 <p className="text-[#8a8a9a] text-sm mt-1">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mt-3">
                   {project.tech.slice(0, 4).map((tech) => (
@@ -188,10 +283,19 @@ function App() {
                 </div>
                 <div className="flex gap-4 mt-4 text-sm">
                   <span className="text-violet-400 hover:underline cursor-pointer">Click to expand →</span>
-                  <span className="text-[#8a8a9a]">{project.year}</span>
+                  <span className="text-[#8a8a9a] ml-auto">{project.semester}</span>
                 </div>
               </motion.div>
             ))}
+          </div>
+          <div className="text-center mt-6">
+            <a 
+              href="https://github.com/sunbimhaqueniloy" 
+              target="_blank"
+              className="text-[#8a8a9a] hover:text-violet-400 transition font-mono text-sm border border-[#2a2a3a] px-6 py-2 rounded-lg inline-block hover:border-violet-500"
+            >
+              View all projects on GitHub →
+            </a>
           </div>
         </motion.div>
       </section>
@@ -219,7 +323,7 @@ function App() {
         >
           <h2 className="text-2xl font-bold text-violet-400 mb-6 font-mono">// timeline</h2>
           <div className="relative pl-8 border-l-2 border-[#2a2a3a]">
-            {timeline.map((item, idx) => (
+            {timeline.slice(0, 10).map((item, idx) => (
               <motion.div
                 key={idx}
                 variants={fadeUp}
@@ -251,7 +355,19 @@ function App() {
           variants={fadeUp}
         >
           <h2 className="text-2xl font-bold text-violet-400 mb-6 font-mono">// fun facts</h2>
-          <FunFacts />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {funFacts.slice(0, 8).map((fact, i) => (
+              <div
+                key={i}
+                className="bg-[#14141e] p-4 rounded-lg border border-[#2a2a3a] hover:border-violet-500 transition group"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="text-2xl group-hover:scale-110 transition-transform">{fact.emoji}</span>
+                  <p className="text-sm text-gray-300">{fact.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </motion.div>
       </section>
 
@@ -263,19 +379,23 @@ function App() {
           viewport={{ once: true }}
           variants={fadeUp}
         >
-          <p>© {new Date().getFullYear()} Niloy · Built with React + Vite + Tailwind</p>
-          <p className="mt-1">
+          <p className="text-white font-mono text-lg mb-4">Let's build something together.</p>
+          <p className="mb-6">
             <span className="text-violet-400">$</span> echo "sunbimhaqueniloy@gmail.com"
             <span className="text-violet-400"> →</span>
             <a href="mailto:sunbimhaqueniloy@gmail.com" className="text-cyan-400 hover:underline ml-1">send mail</a>
           </p>
-          <p className="mt-4 text-xs text-[#8a8a9a]/60">
-            Press <kbd className="px-2 py-1 bg-[#2a2a3a] rounded text-violet-400">⌘K</kbd> to navigate
-          </p>
           <div className="flex justify-center gap-6 mt-4 text-lg">
             <a href="https://github.com/sunbimhaqueniloy" className="text-[#8a8a9a] hover:text-violet-400 transition" target="_blank">GitHub</a>
-            <a href="https://linkedin.com/in/sunbimhaqueniloy" className="text-[#8a8a9a] hover:text-cyan-400 transition" target="_blank">LinkedIn</a>
-            <a href="mailto:sunbimhaqueniloy@gmail.com" className="text-[#8a8a9a] hover:text-violet-400 transition">Email</a>
+            <a href="https://linkedin.com/in/sunbim-haque-niloy-199b49211" className="text-[#8a8a9a] hover:text-cyan-400 transition" target="_blank">LinkedIn</a>
+            <a href="https://x.com/Niloy84865" className="text-[#8a8a9a] hover:text-violet-400 transition" target="_blank">X</a>
+            <a href="mailto:sunbimhaqueniloy@gmail.com" className="text-[#8a8a9a] hover:text-cyan-400 transition">Email</a>
+          </div>
+          <div className="mt-8 pt-6 border-t border-[#2a2a3a] text-xs text-[#8a8a9a]/60">
+            <p>© {new Date().getFullYear()} Niloy · Built with React + Vite + Tailwind</p>
+            <p className="mt-2">
+              Press <kbd className="px-2 py-1 bg-[#2a2a3a] rounded text-violet-400">⌘K</kbd> to navigate
+            </p>
           </div>
         </motion.div>
       </footer>
