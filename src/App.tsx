@@ -48,9 +48,6 @@ function App() {
             transition={{ duration: 0.6 }}
             className="flex-1 text-center lg:text-left"
           >
-            <div className="flex items-center justify-center lg:justify-start gap-2 text-sm text-[#8a8a9a] mb-2">
-              <span className="text-violet-400">$</span> whoami
-            </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-mono leading-tight">
               <span className="text-white">niloy</span>
               <span className="text-[#8a8a9a]">@</span>
@@ -151,7 +148,6 @@ function App() {
       <section id="about" className="max-w-6xl mx-auto py-16 border-b border-[#2a2a3a] scroll-mt-20">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <div className="flex items-center gap-3 mb-6">
-            <span className="text-3xl">👨</span>
             <h2 className="text-3xl md:text-4xl font-bold text-white">About Me</h2>
             <div className="flex-1 h-px bg-gradient-to-r from-violet-500/50 to-transparent ml-4" />
           </div>
@@ -163,20 +159,6 @@ function App() {
             I enjoy building things, exploring new technologies, and turning ideas into practical digital experiences. 
             Always learning, always creating, and always looking for the next thing to build.
           </p>
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-[#14141e] p-4 rounded-lg border border-[#2a2a3a] text-center hover:border-violet-500 transition">
-              <div className="text-violet-400 text-3xl font-bold font-mono">12+</div>
-              <div className="text-[#8a8a9a] text-sm">Projects Built</div>
-            </div>
-            <div className="bg-[#14141e] p-4 rounded-lg border border-[#2a2a3a] text-center hover:border-cyan-400 transition">
-              <div className="text-cyan-400 text-3xl font-bold font-mono">4</div>
-              <div className="text-[#8a8a9a] text-sm">National Olympiad Titles</div>
-            </div>
-            <div className="bg-[#14141e] p-4 rounded-lg border border-[#2a2a3a] text-center hover:border-violet-500 transition">
-              <div className="text-violet-400 text-3xl font-bold font-mono">4×</div>
-              <div className="text-[#8a8a9a] text-sm">GPA 5.00 + Scholarships</div>
-            </div>
-          </div>
         </motion.div>
       </section>
 
@@ -184,26 +166,20 @@ function App() {
       <section id="education" className="max-w-6xl mx-auto py-16 border-b border-[#2a2a3a] scroll-mt-20">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <div className="flex items-center gap-3 mb-6">
-            <span className="text-3xl"></span>
             <h2 className="text-3xl md:text-4xl font-bold text-white">Education</h2>
             <div className="flex-1 h-px bg-gradient-to-r from-cyan-400/50 to-transparent ml-4" />
           </div>
           <div className="space-y-6">
             {education.map((item) => (
               <div key={item.id} className="bg-[#14141e] p-6 rounded-lg border border-[#2a2a3a] hover:border-violet-500 transition">
-                <div className="flex items-start gap-4">
-                  <span className="text-3xl">{item.icon}</span>
-                  <div className="flex-1">
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
-                      <div>
-                        <h3 className="text-xl font-bold text-white">{item.institution}</h3>
-                        <p className="text-cyan-400 font-mono">{item.degree}</p>
-                      </div>
-                      <span className="text-[#8a8a9a] text-sm font-mono bg-[#0a0a0e] px-3 py-1 rounded border border-[#2a2a3a]">{item.period}</span>
-                    </div>
-                    <p className="text-[#8a8a9a] mt-2 text-sm">{item.description}</p>
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+                  <div>
+                    <h3 className="text-xl font-bold text-white">{item.institution}</h3>
+                    <p className="text-cyan-400 font-mono">{item.degree}</p>
                   </div>
+                  <span className="text-[#8a8a9a] text-sm font-mono bg-[#0a0a0e] px-3 py-1 rounded border border-[#2a2a3a]">{item.period}</span>
                 </div>
+                <p className="text-[#8a8a9a] mt-2 text-sm">{item.description}</p>
               </div>
             ))}
           </div>
@@ -214,21 +190,17 @@ function App() {
       <section id="achievements" className="max-w-6xl mx-auto py-16 border-b border-[#2a2a3a] scroll-mt-20">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <div className="flex items-center gap-3 mb-6">
-            <span className="text-3xl"></span>
             <h2 className="text-3xl md:text-4xl font-bold text-white">Achievements</h2>
             <div className="flex-1 h-px bg-gradient-to-r from-violet-500/50 to-transparent ml-4" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {achievements.map((item) => (
               <div key={item.id} className={`bg-[#14141e] p-5 rounded-lg border border-[#2a2a3a] hover:border-violet-500 transition group ${item.id === 'talentpool' ? 'md:col-span-2' : ''}`}>
-                <div className="flex items-start gap-3">
-                  <span className="text-2xl group-hover:scale-110 transition-transform">{item.icon}</span>
-                  <div>
-                    <h4 className="text-white font-semibold">{item.title}</h4>
-                    <p className="text-cyan-400 text-sm font-mono">{item.subtitle}</p>
-                    {item.span && <p className="text-[#8a8a9a] text-xs font-mono mt-0.5">{item.span}</p>}
-                    <p className="text-[#8a8a9a] text-sm mt-1">{item.description}</p>
-                  </div>
+                <div>
+                  <h4 className="text-white font-semibold">{item.title}</h4>
+                  <p className="text-cyan-400 text-sm font-mono">{item.subtitle}</p>
+                  {item.span && <p className="text-[#8a8a9a] text-xs font-mono mt-0.5">{item.span}</p>}
+                  <p className="text-[#8a8a9a] text-sm mt-1">{item.description}</p>
                 </div>
               </div>
             ))}
@@ -240,7 +212,6 @@ function App() {
       <section id="projects" className="max-w-6xl mx-auto py-16 border-b border-[#2a2a3a] scroll-mt-20">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
           <div className="flex items-center gap-3 mb-6">
-            <span className="text-3xl"></span>
             <h2 className="text-3xl md:text-4xl font-bold text-white">Projects</h2>
             <div className="flex-1 h-px bg-gradient-to-r from-cyan-400/50 to-transparent ml-4" />
           </div>
@@ -282,7 +253,6 @@ function App() {
       <section id="timeline" className="max-w-6xl mx-auto py-16 border-b border-[#2a2a3a] scroll-mt-20">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
           <div className="flex items-center gap-3 mb-6">
-            <span className="text-3xl"></span>
             <h2 className="text-3xl md:text-4xl font-bold text-white">Timeline</h2>
             <div className="flex-1 h-px bg-gradient-to-r from-violet-500/50 to-transparent ml-4" />
           </div>
@@ -308,7 +278,6 @@ function App() {
       <section id="skills" className="max-w-6xl mx-auto py-16 border-b border-[#2a2a3a] scroll-mt-20">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
           <div className="flex items-center gap-3 mb-6">
-            <span className="text-3xl">⚡</span>
             <h2 className="text-3xl md:text-4xl font-bold text-white">Skills</h2>
             <div className="flex-1 h-px bg-gradient-to-r from-cyan-400/50 to-transparent ml-4" />
           </div>
@@ -316,12 +285,12 @@ function App() {
             {Object.entries(skills).map(([category, items]) => (
               <motion.div key={category} variants={fadeUp} className="bg-[#14141e] p-5 rounded-lg border border-[#2a2a3a] hover:border-violet-500 transition">
                 <h3 className="text-cyan-400 font-semibold mb-3 capitalize text-lg">
-                  {category === 'mlAi' ? ' ML / AI' : 
-                   category === 'design' ? ' Design & Architecture' :
-                   category === 'data' ? ' Data & Analysis' : 
-                   category === 'languages' ? ' Languages' :
-                   category === 'web' ? ' Web' :
-                   category === 'tools' ? ' Tools' : category}
+                  {category === 'mlAi' ? 'ML / AI' : 
+                   category === 'design' ? 'Design & Architecture' :
+                   category === 'data' ? 'Data & Analysis' : 
+                   category === 'languages' ? 'Languages' :
+                   category === 'web' ? 'Web' :
+                   category === 'tools' ? 'Tools' : category}
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {items.map((skill: string) => (
@@ -340,7 +309,6 @@ function App() {
       <section id="funfacts" className="max-w-6xl mx-auto py-16 border-b border-[#2a2a3a] scroll-mt-20">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <div className="flex items-center gap-3 mb-6">
-            <span className="text-3xl"></span>
             <h2 className="text-3xl md:text-4xl font-bold text-white">Fun Facts</h2>
             <div className="flex-1 h-px bg-gradient-to-r from-violet-500/50 to-transparent ml-4" />
           </div>
@@ -361,7 +329,6 @@ function App() {
       <section id="visualizer" className="max-w-6xl mx-auto py-16 border-b border-[#2a2a3a] scroll-mt-20">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <div className="flex items-center gap-3 mb-6">
-            <span className="text-3xl"></span>
             <h2 className="text-3xl md:text-4xl font-bold text-white">Algorithm Visualizer</h2>
             <div className="flex-1 h-px bg-gradient-to-r from-cyan-400/50 to-transparent ml-4" />
           </div>

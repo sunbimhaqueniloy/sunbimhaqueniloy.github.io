@@ -79,11 +79,4 @@ export const timeline: TimelineItem[] = [
     description: 'Digital implementation of the classic Snake & Ladder board game.',
     year: '2024',
   },
-  {
-    semester: 'Future',
-    title: 'Next Big Project',
-    description: 'AI-driven healthcare platform combining ML with systems engineering.',
-    year: '2027',
-    isFuture: true,
-  },
 ];
