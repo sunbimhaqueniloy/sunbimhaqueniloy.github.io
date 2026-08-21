@@ -13,7 +13,7 @@ export const achievements: Achievement[] = [
     title: 'Bangladesh Mathematical Olympiad — BDMO',
     subtitle: 'Regional & National Champion',
     description: 'Earned championship-level recognition through multiple years of participation in mathematics olympiad.',
-    icon: '🧮',
+    icon: '',
     span: '2017–2020',
   },
   {
@@ -21,7 +21,7 @@ export const achievements: Achievement[] = [
     title: 'Bangladesh Physics Olympiad — BdPhO',
     subtitle: 'Regional & National Champion',
     description: 'Achieved regional and national championship recognition in physics olympiad.',
-    icon: '⚛️',
+    icon: '',
     span: '2018–2020',
   },
   {
@@ -29,7 +29,7 @@ export const achievements: Achievement[] = [
     title: 'Bangladesh Junior Science Olympiad — BdJSO',
     subtitle: 'Regional & National Champion',
     description: 'Demonstrated interdisciplinary strength across mathematics, physics, and science.',
-    icon: '🔬',
+    icon: '',
     span: '2016–2018',
   },
   {
@@ -37,7 +37,7 @@ export const achievements: Achievement[] = [
     title: 'Srijonshil Medha Onneshon Protijogita',
     subtitle: 'Mathematics & Computer Category',
     description: 'Recognized for performance in Mathematics and Computer categories at the national level.',
-    icon: '💡',
+    icon: '',
     span: '2017–2018',
   },
   {
@@ -45,6 +45,6 @@ export const achievements: Achievement[] = [
     title: 'Academic Excellence — Talentpool Scholarship',
     subtitle: 'PSC, JSC, SSC & HSC | GPA 5.00',
     description: 'Awarded Talentpool Scholarships at all major academic milestones with a perfect GPA throughout.',
-    icon: '📚',
+    icon: '',
   },
 ];

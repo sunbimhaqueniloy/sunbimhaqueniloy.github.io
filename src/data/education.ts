@@ -15,7 +15,7 @@ export const education: Education[] = [
     degree: 'Bachelor of Science in Computer Science & Engineering',
     period: 'Current',
     description: 'Pursuing undergraduate studies in Computer Science with interests spanning AI, ML, Software Engineering, Web Development, Computer Vision, and Astronomy.',
-    icon: '🎓',
+    icon: '',
   },
   {
     id: 'DC',
@@ -23,7 +23,7 @@ export const education: Education[] = [
     degree: 'Higher Secondary Certificate — HSC',
     period: 'GPA 5.00',
     description: 'Completed higher secondary education with a perfect GPA, building a strong foundation in science and analytical disciplines.',
-    icon: '📚',
+    icon: '',
   },
   {
     id: 'BNMPC',
@@ -31,6 +31,6 @@ export const education: Education[] = [
     degree: 'Secondary School Certificate — SSC',
     period: 'GPA 5.00',
     description: 'Completed secondary education with a perfect GPA alongside active participation in mathematics, physics, and science competitions.',
-    icon: '🏫',
+    icon: '',
   },
 ];
